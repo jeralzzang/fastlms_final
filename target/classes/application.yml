@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://studydb.c1rvx1ik6fxm.ap-northeast-2.rds.amazonaws.com:43306/lms
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: lms_user
+    password: lmsuser
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jeralzzang@gmail.com
+    password: azoodieunkngrlmh
+    properties:
+      mail:
+        smtp:
+          auto: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    root: info
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
